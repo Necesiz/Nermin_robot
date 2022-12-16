@@ -65,6 +65,12 @@ async def yeni_mesaj(event: events.NewMessage.Event):
 async def yeni_mesaj(event: events.NewMessage.Event):
     await event.reply(f"{random.choice(ban)}")
 
+@Nermin.on(events.NewMessage(pattern='(?i)sehidler+'))
+@Nermin.on(events.NewMessage(pattern='(?i)şəhidlər+'))
+@Nermin.on(events.NewMessage(pattern='(?i)şəhid+'))
+async def yeni_mesaj(event: events.NewMessage.Event):
+    await event.reply(f"{random.choice(sehid)}")
+    
 
 nermin_run = nermin_start.decode("utf8")
 print(">> Nermin qoz kimi işləyir ♿ @RoBotlarimTg @aykhan_s <<")
